@@ -1,11 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>game challenge</title>
+    <title>Power Up Mini Games</title>
+
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    Hello World
+
+<div class="container">
+
+    <h1>POWER UP!</h1>
+    <p>Choose your challenge</p>
+
+    <div class="tabs">
+        <button class="tab active" onclick="showGame('memory', this)">
+            Memory Match
+        </button>
+
+        <button class="tab" onclick="showGame('quiz', this)">
+            C Bug Hunter
+        </button>
+    </div>
+
+    <!-- MEMORY GAME -->
+    <section id="memory" class="game active">
+
+        <h2>Memory Match</h2>
+        <p>Find all matching pairs!</p>
+
+        <p>Moves: <span id="moves">0</span></p>
+
+        <div id="grid" class="grid"></div>
+
+        <button class="restart" onclick="startMemory()">
+            Restart Game
+        </button>
+
+        <p id="memoryResult"></p>
+
+    </section>
+
+    <!-- C QUIZ GAME -->
+    <section id="quiz" class="game">
+
+        <h2>C Bug Hunter</h2>
+        <p>Find the correct answer!</p>
+
+        <p>Question <span id="number">1</span> / <span id="totalQuestions">7</span></p>
+
+        <div class="question">
+            <h3 id="questionText"></h3>
+            <pre id="codeText"></pre>
+        </div>
+
+        <div id="answers"></div>
+
+        <p id="feedback"></p>
+
+        <button class="restart" onclick="nextQuestion()">
+            Next Question
+        </button>
+
+        <p>Score: <span id="score">0</span></p>
+
+    </section>
+
+</div>
+
+<!-- Connect JavaScript file -->
+<script src="script.js"></script>
+
 </body>
 </html>

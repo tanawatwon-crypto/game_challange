@@ -1,0 +1,105 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #333;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+}
+
+.tab {
+    flex: 1;
+    background: #ddd;
+}
+
+.tab.active {
+    background: #f59e0b;
+    color: white;
+}
+
+.game {
+    display: none;
+}
+
+.game.active {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    height: 85px;
+    font-size: 28px;
+    background: #2563eb;
+    color: white;
+}
+
+.card.matched {
+    background: #16a34a;
+    cursor: default;
+}
+
+.question {
+    background: #f3f4f6;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background: #e5e7eb;
+    text-align: left;
+}
+
+.answer:hover {
+    background: #d1d5db;
+}
+
+#feedback {
+    min-height: 30px;
+    font-weight: bold;
+}
+
+.restart {
+    background: #f59e0b;
+    color: white;
+    margin-top: 15px;
+}
