@@ -36,8 +36,11 @@ let matched = 0;
 function startMemory() {
     cards = [...symbols, ...symbols];
 
-    // Shuffle cards
-    cards.sort(() => Math.random() - 0.5);
+    // Shuffle cards with Fisher–Yates
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
 
     firstCard = null;
     secondCard = null;
@@ -53,7 +56,7 @@ function startMemory() {
 
     grid.innerHTML = "";
 
-    // Create 12 cards
+    // Create 16 cards (8 matching pairs)
     cards.forEach((symbol) => {
         const button = document.createElement("button");
 
@@ -258,6 +261,7 @@ function loadQuestion() {
         q.code;
 
     document.getElementById("feedback").textContent = "";
+    document.querySelector("#quiz .restart").textContent = "Next Question";
 
     const answerBox = document.getElementById("answers");
 
@@ -312,6 +316,22 @@ function checkAnswer(index) {
 // Move to the next question
 function nextQuestion() {
 
+    // After the final question, the button starts a new quiz.
+    if (currentQuestion >= questions.length - 1 && answered) {
+        currentQuestion = 0;
+        score = 0;
+        document.getElementById("score").textContent = score;
+        loadQuestion();
+        return;
+    }
+
+    // Require an answer before moving on.
+    if (!answered) {
+        document.getElementById("feedback").textContent =
+            "Please choose an answer before continuing.";
+        return;
+    }
+
     if (currentQuestion < questions.length - 1) {
 
         currentQuestion++;
@@ -330,6 +350,8 @@ function nextQuestion() {
 
         document.getElementById("feedback").textContent =
             "Well done!";
+
+        document.querySelector("#quiz .restart").textContent = "Play Again";
     }
 }
 
