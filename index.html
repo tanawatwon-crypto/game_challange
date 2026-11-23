@@ -22,6 +22,7 @@
             Memory Match
         </button>
 
+
         <button class="tab" onclick="showGame('quiz', this)">
             C Bug Hunter
         </button>
@@ -29,6 +30,7 @@
 
     <!-- MEMORY GAME -->
     <section id="memory" class="game active">
+
 
         <h2>Memory Match</h2>
         <p>Find all matching pairs!</p>
@@ -45,20 +47,21 @@
 
     </section>
 
-    <!-- C QUIZ GAME -->
     <section id="quiz" class="game">
+
 
         <h2>C Bug Hunter</h2>
         <p>Find the correct answer!</p>
 
         <p>Question <span id="number">1</span> / <span id="totalQuestions">7</span></p>
 
+        
         <div class="question">
             <h3 id="questionText"></h3>
             <pre id="codeText"></pre>
         </div>
 
-        <div id="answers"></div>
+        <div id="answers"> </div>
 
         <p id="feedback"></p>
 
