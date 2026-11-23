@@ -130,3 +130,41 @@ h2 {
 .container > p {
     color: #64748b;
 }
+
+.tab {
+    background: #e2e8f0;
+    color: #475569;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.tab.active {
+    background: #2563eb;
+    color: white;
+}
+
+.card {
+    height: 90px;
+    border-radius: 12px;
+    font-size: 32px;
+    background: #3b82f6;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.15);
+    transition: 0.2s;
+}
+
+.card.matched {
+    background: #22c55e;
+}
+
+.answer {
+    padding: 14px;
+    border-radius: 10px;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+.restart {
+    background: #2563eb;
+    border-radius: 10px;
+    font-weight: bold;
+}
